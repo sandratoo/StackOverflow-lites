@@ -28,8 +28,9 @@ def create_app(test_config=None):
     @app.route('/hello')
     def hello():
         return 'Hello, World!'
-    
-    @app.route("/math<int:number>")
+    # a page that returns the square of two numbers (doessnt work yet)
+    @app.route("/math/<int:number>")
     def square(number):
         return number*number
+        
     return app

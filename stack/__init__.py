@@ -27,10 +27,12 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/hello')
     def hello():
-        return 'Hello, World!'
-    # a page that returns the square of two numbers (doessnt work yet)
-    @app.route("/math/<int:number>")
-    def square(number):
-        return number*number
-        
+        return 'Hello, Sandra!'
+
+    from . import db
+    db.init_app(app)
+    
+    from . import auth
+    app.register_blueprint(auth.bp)
+
     return app

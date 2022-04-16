@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}create{% endblock %}
+
+{% block content %}
+<h1>Welcome to stack! Create an account</h1>
+<form action="auth.register" method="get">
+    <label>Username</label>
+    <input type="text" id="username" placeholder="Enter Name" required>
+    <label>Password</label>
+    <input type="password" placeholder="Enter password" id="password" required>
+    <input type="submit" value="Create">
+</form>
+
+{% endblock %}
